@@ -1,3 +1,7 @@
-# OptimalControl
-Contribution from optimal control discipline.
-Example that applies the contribution detailed in the article "A novel LQR Controller Design Method based on the Pontryagin’s Maximum Principle".
+<p dir="ltr"># Optimal Control</p>
+<p dir="ltr">Contribution from optimal control discipline.</p>
+<p dir="ltr">Example that applies the contribution detailed in the article "A novel LQR Controller Design Method based on the Pontryagin’s Maximum Principle". By&nbsp;<a _ngcontent-adu-c165="" href="https://ieeexplore.ieee.org/author/37089271025" style="background-color: rgb(255, 255, 255); font-size: 0.9375rem;"><span _ngcontent-adu-c165="">Martín Herrera</span></a>,&nbsp;<a _ngcontent-adu-c165="" href="https://ieeexplore.ieee.org/author/37691496800" style="background-color: rgb(255, 255, 255); font-size: 0.9375rem;"><span _ngcontent-adu-c165="">Julián Pucheta</span></a>,&nbsp;<a _ngcontent-adu-c165="" href="https://ieeexplore.ieee.org/author/37087791181" style="background-color: rgb(255, 255, 255); font-size: 0.9375rem;"><span _ngcontent-adu-c165="">Carlos Salas</span></a>,&nbsp;<a _ngcontent-adu-c165="" href="https://ieeexplore.ieee.org/author/37448318200" style="background-color: rgb(255, 255, 255); font-size: 0.9375rem;"><span _ngcontent-adu-c165="">H. Daniel Patiño</span></a>&nbsp;and&nbsp;<a _ngcontent-adu-c165="" href="https://ieeexplore.ieee.org/author/37086040922" style="background-color: rgb(255, 255, 255); font-size: 0.9375rem;"><span _ngcontent-adu-c165="">Cristian Rodríguez Rivero</span></a>.&nbsp;</p>
+<p dir="ltr">Available at&nbsp;<span style="font-size: 0.9375rem;">https://ieeexplore.ieee.org/document/9648447/.</span></p>
+<p dir="ltr"><span style="font-size: 0.9375rem;">The algorithm is testet on an invetrted pedulum extracted from&nbsp; "Sontag. Mathematical control theory 1998. Pag 104. http://www.sontaglab.org".</span></p>
+<p dir="ltr">Here a snapshot of the algorithm runing on Octave.</p>
+<p dir="ltr"><span style="font-size: 0.9375rem;"><img src="https://fcefyn.aulavirtual.unc.edu.ar/draftfile.php/636/user/draft/637785422/image.png" alt="" role="presentation" class="img-fluid"><br></span></p>
