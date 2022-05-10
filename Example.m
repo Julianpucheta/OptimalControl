@@ -3,7 +3,7 @@ clc;clear all; clc;clear all;
 m=.1;Fricc=0.1; long=0.6;g=9.8;M=.5;
 h=0.0001;tiempo=(20/h);p_pp=0;tita_pp=0; t=0:h:tiempo*h;
 %Condiciones iniciales
-alfa(1)=.15; color='*g';
+alfa(1)=.15; color='.g';
 % alfa(1)=2.7; color='b';
 alfa(1)=3.14; color='.r';
 ref=0;
@@ -53,11 +53,11 @@ while(i<(tiempo+1))
 end
 u(i)=-K*estado;
 figure(1);hold on;
-subplot(3,2,1);plot(t,omega,color);grid on; title('Velocidad ángulo');hold on;
-subplot(3,2,2);plot(t,alfa,color);grid on;title('Ángulo');hold on;
-subplot(3,2,3); plot(t,p,color);grid on;title('Posición carro');hold on;
-subplot(3,2,4);plot(t,p_p,color);grid on;title('Velocidad carro');hold on;
-subplot(3,1,3);plot(t,u,color);grid on;title('Acción de control');xlabel('Tiempo en Seg.');hold on;
+subplot(3,2,1);plot(t,p,color);grid on; title('Cart position');hold on;
+subplot(3,2,2);plot(t,alfa,color);grid on;title('Angle');hold on;
+subplot(3,2,3); plot(t,p_p,color);grid on;title('Cart velocity');hold on;
+subplot(3,2,4);plot(t,omega,color);grid on;title('Angle velocity');hold on;
+subplot(3,1,3);plot(t,u,color);grid on;title('Force action');xlabel('Time Sec.');hold on;
 figure(2);hold on;
-subplot(2,2,1);plot(alfa,omega,color);grid on;xlabel('Ángulo');ylabel('Velocidadangular');hold on;
-subplot(2,2,2);plot(p,p_p,color);grid on;xlabel('Posicion carro');ylabel('Velocidad carro');hold on;
+subplot(2,2,1);plot(alfa,omega,color);grid on;xlabel('Angle');ylabel('Angle velocity');hold on;
+subplot(2,2,2);plot(p,p_p,color);grid on;xlabel('Cart position');ylabel('Cart velocity');hold on;
