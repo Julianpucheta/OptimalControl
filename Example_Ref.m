@@ -8,17 +8,17 @@ alfa(1)=2.97; color='b';
 % alfa(1)=3.14; color='r';
 ref=100;
 omega(1)=0; p_p(1)=0; u(1)=0; p(1)=0; i=1;indice=0;
-%Versión linealizada en el equilibrio inestable. Sontag Pp 104.
+%VersiÃ³n linealizada en el equilibrio inestable. Sontag Pp 104.
 % estado=[p(i); p_p(i); alfa(i); omega(i)]
 Mat_A=[0 1 0 0;0 -Fricc/M -m*g/M 0; 0 0 0 1; 0 Fricc/(long*M) g*(m+M)/(long*M) 0];
 Mat_B=[0; 1/M; 0; -1/(long*M)];
-Mat_C=[1 0 0 0]; %La salida monovariable es posición
-% Construcción del sistema ampliado
+Mat_C=[1 0 0 0]; %La salida monovariable es posiciÃ³n
+% ConstrucciÃ³n del sistema ampliado
 Mat_Aa=[Mat_A zeros(4,1);-Mat_C 0];
 Mat_Ba=[Mat_B;0];
 % Mat_M=[Mat_B Mat_A*Mat_B Mat_A^2*Mat_B Mat_A^3*Mat_B];%Matriz Controlabilidad
 Mat_M=[Mat_Ba Mat_Aa*Mat_Ba Mat_Aa^2*Mat_Ba Mat_Aa^3*Mat_Ba Mat_Aa^4*Mat_Ba];%Matriz Controlabilidad
-%Cálculo del controlador por asignación de polos
+%CÃ¡lculo del controlador por asignaciÃ³n de polos
 %autovalores ecuacion caracteriatica de A lazo abierto
 auto_val=eig(Mat_Aa);
 c_ai=conv(conv(conv(conv([1 -auto_val(1)],[1 -auto_val(2)]),[1 -auto_val(3)]),[1 -auto_val(4)]),[1 -auto_val(5)]); %= poly(eig(Mat_A))
@@ -29,7 +29,7 @@ Mat_W=[c_ai(5) c_ai(4) c_ai(3) c_ai(2) 1;
     c_ai(2) 1 0 0 0;
     1 0 0 0 0];
 Mat_T=Mat_M*Mat_W;
-A_controlable=inv(Mat_T)*Mat_Aa*Mat_T; %Verificación de que T esté bien
+A_controlable=inv(Mat_T)*Mat_Aa*Mat_T; %VerificaciÃ³n de que T estÃ© bien
 % 1.0000e+00 1.0724e+01 3.7126e+01 4.8193e+01 3.2590e+01 1.0330e+01 alfa_ia=[1.0000e+00 1.0724e+01 3.7126e+01 4.8193e+01 3.2590e+011.0330e+01];%Ec caract deseadapol=fliplr(alfa_ia(2:6)-c_ai(2:6));
 a5=-A_controlable(5,1);%a5
 a4=-A_controlable(5,2);%a4
