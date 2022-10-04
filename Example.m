@@ -8,17 +8,17 @@ alfa(1)=.15; color='.g';
 alfa(1)=3.14; color='.r';
 ref=0;
 omega(1)=0; p_p(1)=0; u(1)=0; p(1)=0; i=1;indice=0;
-%Versión linealizada en el equilibrio inestable. Sontag Pp 104.
+%VersiÃ³n linealizada en el equilibrio inestable. Sontag Pp 104.
 % estado=[p(i); p_p(i); alfa(i); omega(i)]
 Mat_A=[0 1 0 0;0 -Fricc/M -m*g/M 0; 0 0 0 1; 0 Fricc/(long*M) g*(m+M)/(long*M) 0]
 Mat_B=[0; 1/M; 0; -1/(long*M)]
-Mat_C=[1 0 0 0]; %La salida monovariable es posición y ángulo
+Mat_C=[1 0 0 0]; %La salida monovariable es posiciÃ³n y Ã¡ngulo
 Mat_M=[Mat_B Mat_A*Mat_B Mat_A^2*Mat_B Mat_A^3*Mat_B];%Matriz Controlabilidad
 auto_val=eig(Mat_A);
 c_ai=conv(conv(conv([1 -auto_val(1)],[1 -auto_val(2)]),[1 -auto_val(3)]),[1 -auto_val(4)]); %= poly(eig(Mat_A))
 Mat_W=[;c_ai(4) c_ai(3) c_ai(2) 1;c_ai(3) c_ai(2) 1 0;c_ai(2) 1 0 0;1 0 0 0];
 Mat_T=Mat_M*Mat_W;% T=Q=Co*Toeplitz
-A_controlable=inv(Mat_T)*Mat_A*Mat_T; %Verificación de que T esté bien
+A_controlable=inv(Mat_T)*Mat_A*Mat_T; %VerificaciÃ³n de que T estÃ© bien
 a4=-A_controlable(4,1);%a4
 a3=-A_controlable(4,2);
 a2=-A_controlable(4,3);
@@ -60,4 +60,4 @@ subplot(3,2,4);plot(t,omega,color);grid on;title('Angle velocity');hold on;
 subplot(3,1,3);plot(t,u,color);grid on;title('Force action');xlabel('Time Sec.');hold on;
 figure(2);hold on;
 subplot(2,2,1);plot(alfa,omega,color);grid on;xlabel('Angle');ylabel('Angle velocity');hold on;
-subplot(2,2,2);plot(p,p_p,color);grid on;xlabel('Cart position');ylabel('Cart velocity');hold on;
+subplot(2,2,2);plot(p,p_p,color);grid on;xlabel('Cart position');ylabel('Cart velocity');hold on;    
