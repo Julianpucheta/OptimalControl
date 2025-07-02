@@ -5,7 +5,7 @@ h=0.001;tiempo=(120/h);tita_pp=0;t=0:h:tiempo*h;
 %Condiciones iniciales
 alfa(1)=.15; color='g';
 alfa(1)=2.97; color='b';
-% alfa(1)=3.14; color='r';
+alfa(1)=3.14; color='r';
 ref=100;
 omega(1)=0; p_p(1)=0; u(1)=0; p(1)=0; i=1;indice=0;
 %Versión linealizada en el equilibrio inestable. Sontag Pp 104.
